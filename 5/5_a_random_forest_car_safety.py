@@ -3,7 +3,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
-data = pd.read_csv('5/car_evaluation.csv')
+data = pd.read_csv('car_evaluation.csv')
 data = data.apply(LabelEncoder().fit_transform)
 X, y = data.iloc[:, :-1], data.iloc[:, -1]
 

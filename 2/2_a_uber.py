@@ -6,7 +6,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 # Load dataset
-df = pd.read_csv('2/uber.csv')
+df = pd.read_csv('uber.csv')
 
 # --- TASK 1 & 2: Pre-process dataset & Identify/Remove Outliers ---
 df = df[

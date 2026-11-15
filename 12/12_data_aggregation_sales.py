@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Task 1: Import the dataset
-df = pd.read_csv("12/customer_shopping_data.csv")
+df = pd.read_csv("customer_shopping_data.csv")
 
 # Task 2: Explore the dataset
 print("--- Dataset Info ---")

@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Task 1: Import dataset
-df = pd.read_csv("11/air_quality.csv")
+df = pd.read_csv("air_quality.csv")
 
 # Task 2: Explore dataset
 print(df.info())

@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # 1. Import and clean column names
-df = pd.read_csv("10/bengaluru_house_data.csv")
+df = pd.read_csv("bengaluru_house_data.csv")
 
 print("========== BEFORE WRANGLING ==========")
 print(f"Initial Shape: {df.shape}")

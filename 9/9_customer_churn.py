@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 # 1. Import the dataset
-df = pd.read_csv("9/telcom_customer_churn.csv")
+df = pd.read_csv("telcom_customer_churn.csv")
 
 # 2. Explore the dataset
 print("--- Dataset Shape ---")

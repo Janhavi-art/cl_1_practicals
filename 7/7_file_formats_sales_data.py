@@ -4,9 +4,9 @@ import numpy as np
 import pandas as pd
 
 # 1. Load data
-csv = pd.read_csv('7/sales_data_sample.csv', encoding='cp1252')
-ed = pd.read_excel('7/sales_data_sample.xlsx')
-with open('7/customers.json', 'r') as json_file:
+csv = pd.read_csv('sales_data_sample.csv', encoding='cp1252')
+ed = pd.read_excel('sales_data_sample.xlsx')
+with open('customers.json', 'r') as json_file:
   json_data = json.load(json_file)
 json_df = pd.json_normalize(json_data)
 
