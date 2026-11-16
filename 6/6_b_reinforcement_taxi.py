@@ -94,3 +94,51 @@ while not (terminated or truncated):
 
     # Pause briefly so each step can be seen
     time.sleep(0.4)
+
+# Reinforcement Learning (RL) is a type of machine learning in which an
+# agent learns to make decisions by interacting with an environment.
+# The agent receives rewards or penalties based on its actions and
+# learns a strategy to maximize the total cumulative reward.
+#
+# The Taxi environment is a predefined environment in Gymnasium where
+# a taxi must pick up a passenger and drop them at the correct destination.
+#
+# Agent: The taxi that learns to perform the task.
+# Environment: The Taxi grid world in which the agent operates.
+# State: The current position of the taxi, passenger and destination.
+# Action: An operation performed by the taxi, such as moving or picking
+# up or dropping off a passenger.
+# Reward: Feedback received after performing an action. Correct actions
+# receive positive rewards, while incorrect actions receive penalties.
+#
+# Q-Learning is a model-free, off-policy Reinforcement Learning algorithm
+# that learns the optimal action-value function (Q-values).
+# A Q-table stores the expected future rewards for every state-action pair.
+#
+# Learning Rate (alpha) controls how much new information influences
+# the updated Q-value. A higher value gives more importance to new learning.
+#
+# Discount Factor (gamma) determines the importance of future rewards
+# compared to immediate rewards. Its value ranges from 0 to 1.
+#
+# Epsilon (epsilon) controls the exploration-exploitation trade-off.
+# Exploration means choosing random actions to discover new possibilities.
+# Exploitation means choosing the best-known action using the Q-table.
+#
+# Epsilon-Greedy Strategy selects a random action with probability epsilon
+# and the best-known action with probability (1 - epsilon).
+#
+# Q-Learning Update Rule updates the Q-value using the current reward
+# and the maximum estimated future Q-value of the next state.
+#
+# Epsilon Decay gradually reduces random exploration as training progresses,
+# allowing the agent to increasingly use its learned knowledge.
+#
+# Episodes represent complete attempts by the agent to finish the task.
+# Each episode consists of multiple steps until termination or truncation.
+#
+# Training Performance is evaluated using the average reward over recent
+# episodes. Higher average rewards generally indicate improved learning.
+#
+# After training, the agent uses the learned Q-table to select the best
+# action in each state and demonstrates the learned taxi behaviour.

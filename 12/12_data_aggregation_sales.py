@@ -38,3 +38,60 @@ region_category_sales.plot(kind='bar', figsize=(10, 6), title="Sales by Region a
 plt.ylabel("Total Sales Amount")
 plt.xlabel("Region (Shopping Mall)")
 plt.show()
+
+# Customer Shopping Data Analysis and Visualization:
+# Sales Analysis involves examining sales data to identify revenue patterns,
+# top-performing regions and product category performance.
+#
+# 1. Data Loading: Pandas read_csv() is used to load the customer shopping
+# dataset into a DataFrame.
+#
+# 2. Data Exploration: info() displays column names, data types and
+# non-null values, while head() displays the first five records.
+# This helps understand the dataset structure and contents.
+#
+# 3. Variable Identification:
+# shopping_mall represents the region, price represents the sales amount,
+# and category represents the product category.
+# These variables are selected for regional and category-wise sales analysis.
+#
+# 4. Grouping and Aggregation:
+# groupby() groups records according to shopping_mall.
+# sum() calculates the total sales for each shopping mall.
+# This is an example of data aggregation used to summarize sales information.
+#
+# 5. Top-Performing Region Identification:
+# idxmax() returns the shopping mall with the highest total sales.
+# max() returns the maximum sales value.
+# This helps identify the region generating the highest revenue.
+#
+# 6. Sales Distribution Visualization (Pie Chart):
+# A pie chart represents the contribution of each shopping mall
+# to the overall sales.
+# Each slice represents a region's proportion of total sales.
+# autopct='%1.1f%%' displays percentage values up to one decimal place.
+# plt.ylabel("") removes the unnecessary y-axis label.
+#
+# 7. Multidimensional Grouping (Pivot Table):
+# pivot_table() summarizes data based on multiple categorical variables.
+# Here, shopping_mall is used as the index, category as the columns,
+# and price as the values.
+# aggfunc='sum' calculates total sales for each region-category combination.
+# This helps compare product category performance across regions.
+#
+# 8. Grouped Bar Chart:
+# A grouped bar chart compares sales across different shopping malls
+# and product categories.
+# Each group represents a shopping mall, while individual bars
+# represent different product categories.
+# It helps identify which categories generate higher sales
+# in different regions.
+#
+# 9. Data Visualization and Customization:
+# Matplotlib is used to create and customize pie charts and bar charts.
+# Titles, axis labels, figure size and percentage annotations
+# improve the readability and interpretation of visualizations.
+#
+# Finally, sales data is analyzed using grouping, aggregation,
+# pivot tables and visualization techniques to identify
+# top-performing regions and compare category-wise sales.

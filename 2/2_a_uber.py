@@ -57,4 +57,41 @@ for model in [LinearRegression(), Ridge(), Lasso()]:
   rmse = mean_squared_error(y_test, pred) ** 0.5
   print(f'{type(model).__name__:<18} | R2: {r2:.4f} | RMSE: {rmse:.4f}')
 
- 
+ # Linear Regression is a supervised machine learning algorithm used to predict
+# continuous numerical values by establishing a linear relationship between
+# independent variables (features) and a dependent variable (target).
+#
+# Data Preprocessing involves cleaning the dataset by removing invalid values
+# and outliers to improve the accuracy and reliability of the model.
+#
+# Feature Engineering is the process of creating new meaningful features
+# from existing data. Here, distance is calculated using latitude and
+# longitude, while hour and day_of_week are extracted from pickup_datetime.
+#
+# Correlation measures the strength and direction of the relationship
+# between two variables. The correlation coefficient ranges from -1 to +1.
+# Positive correlation indicates both variables increase together, while
+# negative correlation indicates one decreases as the other increases.
+#
+# Standardization transforms features to have a mean of 0 and standard
+# deviation of 1, ensuring that features with larger scales do not dominate.
+#
+# Train-Test Split divides the dataset into training and testing sets.
+# The training set is used to train the model, while the testing set
+# evaluates its performance on unseen data.
+#
+# Linear Regression predicts values using a linear equation.
+# Ridge Regression uses L2 regularization, which adds a penalty based on
+# the square of coefficient values to reduce overfitting.
+# Lasso Regression uses L1 regularization, which adds a penalty based on
+# the absolute values of coefficients and can reduce some coefficients to zero.
+#
+# R-squared (R2) measures how well the model explains the variance in the
+# target variable. A value closer to 1 indicates a better fit.
+#
+# Root Mean Squared Error (RMSE) measures the average prediction error
+# by calculating the square root of the mean squared differences between
+# actual and predicted values. Lower RMSE indicates better performance.
+#
+# Finally, Linear, Ridge, and Lasso Regression models are compared using
+# R2 Score and RMSE to identify the model with better predictive performance.

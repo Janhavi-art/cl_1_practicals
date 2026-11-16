@@ -5,7 +5,7 @@ import pandas as pd
 df = pd.read_csv("bengaluru_house_data.csv")
 
 print("========== BEFORE WRANGLING ==========")
-print(f"Initial Shape: {df.shape}")
+print(f"Initial Shape: {df.shape}") 
 print("\nInitial Missing Values:")
 print(df.isnull().sum())
 print("\nInitial Data (first 3 rows):")
@@ -69,3 +69,88 @@ print("======== FINAL CLEANED DATASET =======")
 print(f"Final Shape: {df_encoded.shape}")
 print("\nFinal Data (first 3 rows):")
 print(df_encoded.head(3))
+
+# Bengaluru House Price Data Wrangling and Preprocessing:
+# Data Wrangling is the process of cleaning, transforming, integrating
+# and organizing raw data into a structured and usable format.
+#
+# 1. Data Loading and Exploration:
+# Pandas read_csv() loads the Bengaluru house dataset.
+# shape displays the number of rows and columns.
+# isnull().sum() identifies missing values in each column.
+# head() displays the first few records for initial inspection.
+#
+# 2. Column Name Standardization:
+# str.lower() converts column names into lowercase.
+# str.strip() removes leading and trailing spaces.
+# str.replace() replaces spaces with underscores.
+# This ensures consistent column naming.
+#
+# 3. Missing Value Handling and Data Formatting:
+# Unnecessary columns such as society and availability are removed.
+# pd.to_numeric() converts total_sqft into numerical format.
+# errors='coerce' converts invalid values and ranges into NaN.
+# dropna() removes rows with missing values in important columns.
+# fillna() replaces missing bath and balcony values with their median.
+#
+# 4. Data Cleaning and Feature Extraction:
+# str.strip() and str.lower() standardize location names.
+# str.split() separates the size column into individual parts.
+# bhk is extracted from the size column and converted into an integer.
+# BHK (Bedroom, Hall, Kitchen) represents the number of bedrooms.
+#
+# 5. Data Integration (Merging):
+# os.path.exists() checks whether the demographic dataset exists.
+# pd.merge() combines house data with neighborhood demographic data
+# using the common location column.
+# A left join retains all records from the main house dataset.
+#
+# 6. Data Filtering:
+# Boolean filtering removes land plots and retains other property types.
+# The ~ operator represents logical NOT and reverses the filtering condition.
+#
+# 7. Outlier Detection and Handling:
+# The Interquartile Range (IQR) method identifies extreme values
+# in numerical columns such as price and total_sqft.
+# Q1 represents the 25th percentile and Q3 represents the 75th percentile.
+# IQR = Q3 - Q1.
+# Lower Bound = Q1 - 1.5 * IQR.
+# Upper Bound = Q3 + 1.5 * IQR.
+# clip() limits extreme values within the calculated boundaries
+# instead of deleting entire records.
+# describe() is used to compare minimum, maximum and mean values
+# before and after outlier handling.
+#
+# 8. Feature Engineering and Aggregation:
+# Feature Engineering creates new meaningful variables from existing data.
+# price_per_sqft is calculated to determine the price per square foot.
+# It is calculated by converting price from lakhs to rupees
+# and dividing it by the total area in square feet.
+#
+# 9. Categorical Variable Grouping:
+# nunique() counts the number of unique locations.
+# value_counts() calculates the frequency of each location.
+# Rare locations having 10 or fewer records are grouped into "other".
+# This reduces the number of categories and prevents excessive
+# feature creation during One-Hot Encoding.
+#
+# 10. Categorical Encoding:
+# pd.get_dummies() performs One-Hot Encoding by converting categorical
+# variables into separate binary (0/1) columns.
+# area_type and location are encoded into numerical features.
+# drop_first=True removes one category from each encoded variable
+# to avoid redundant columns and multicollinearity.
+#
+# 11. Removal of Intermediate Columns:
+# size and price_per_sqft are removed from the final dataset.
+# size is redundant because BHK has already been extracted.
+# price_per_sqft is removed because it is an intermediate feature
+# in this particular preprocessing pipeline.
+#
+# 12. Final Dataset Verification:
+# shape displays the final number of rows and columns.
+# head() displays the first three records of the cleaned dataset.
+#
+# Finally, the raw Bengaluru house dataset is cleaned, integrated,
+# transformed and encoded into a structured numerical dataset
+# suitable for further statistical analysis and machine learning.
