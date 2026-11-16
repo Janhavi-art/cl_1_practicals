@@ -25,6 +25,7 @@ df['distance'] = np.sqrt(
 )
 df['hour'] = pd.to_datetime(df['pickup_datetime']).dt.hour
 df['day_of_week'] = pd.to_datetime(df['pickup_datetime']).dt.dayofweek
+
 # --- TASK 3: Check the correlation ---
 cols_to_check = [
     'fare_amount',
